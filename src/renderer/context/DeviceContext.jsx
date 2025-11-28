@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const DeviceContext = createContext(null);
 
@@ -10,8 +10,13 @@ export const DeviceProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [deviceType, setDeviceType] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
+    // Simulate loading (2–3 sec)
+ 
   const value = {
     devices,
+ loading, setLoading,
     setDevices,
     selectedDevice,
     setSelectedDevice,

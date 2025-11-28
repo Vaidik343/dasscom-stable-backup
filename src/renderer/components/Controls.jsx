@@ -85,7 +85,7 @@ export default function Controls() {
   
 
         <button onClick={() => scanDevices({ useNmap: true })} disabled={scanning}  className="btn btn btn-primary">
-          {scanning ? "Scanning..." : "Quick Scan"}
+          {scanning ? "Scanning..." : "Scan Network"}
         </button>
 
         <button onClick={() => setShowCredentialsManager(true)} className="btn btn-primary">

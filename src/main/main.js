@@ -2,7 +2,7 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const { dialog } = require("electron");
 const exportToExcel = require("../utils/exportToExcel");
-
+const gotLock = app.requestSingleInstanceLock();
 
 
 const path = require("path");
@@ -221,6 +221,17 @@ ipcMain.handle("nmap-scan", async (event, ip) => {
   }
 });
 app.whenReady().then(createWindow);
+
+
+
+if (!gotLock) {
+  app.quit();
+} else {
+  app.setName("Dasscom");
+  app.setAppUserModelId("com.dasscom.desktop"); // match package.json → build.appId
+  app.whenReady().then(createWindow);
+}
+
 
 // macOS behavior
 app.on("window-all-closed", () => {

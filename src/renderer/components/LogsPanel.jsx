@@ -66,7 +66,7 @@ export default function LogsPanel() {
         </button>
         <button onClick={() => setLogs([])}>Clear Logs</button>
         <button onClick={() => scanDevices({ useNmap: true })} disabled={scanning}>
-          {scanning ? "Scanning..." : "Quick Scan"}
+          {scanning ? "Scanning..." : "Re-Scan"}
         </button>
         <button onClick={() => scanDevices({ useNmap: true, debugMode: true })} disabled={scanning}>
           {scanning ? "Scanning..." : "Debug Scan (All Devices)"}

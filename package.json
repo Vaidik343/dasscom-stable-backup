@@ -17,11 +17,13 @@
     "electron-store": "^11.0.2",
     "exceljs": "^4.4.0",
     "ip": "^2.0.1",
+    "lottie-react": "^2.4.1",
     "pin": "^0.3.0",
     "ping": "^0.4.4",
     "react": "^19.1.1",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.1",
+    "uninstall": "^0.0.0",
     "xlsx": "^0.18.5"
   },
   "keywords": [],
@@ -44,6 +46,7 @@
     "wait-on": "^9.0.1"
   },
   "build": {
+    "productName": "Dasscom",
     "files": [
       "dist/**",
       "src/**",
@@ -79,6 +82,8 @@
       "signAndEditExecutable": false
     },
     "nsis": {
+      "installerIcon": "public/wifi.ico",
+      "uninstallerIcon": "public/wifi.ico",
       "oneClick": false,
       "perMachine": true,
       "allowToChangeInstallationDirectory": true
